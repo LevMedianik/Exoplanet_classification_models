@@ -1,64 +1,56 @@
-# Exoplanet_classification_models
-## Overview
+## Exoplanet_classification_models
+# Overview
 This work is about three simple machine learning model to classify exoplanets by discovery method. Models are based on Naive Bayes, Decision Trees and Random Forest architectures. All models are trained on NASA Exoplanet Achive dataset (URL: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS) containing various planetary/stellar characteristics (radius, mass, etc...). These models can predict Exoplanet discovery method based on planetary and solar characteristics. For building these models, planets.csv dataset was utilized with its preprocessing and creating a separated file of planets_clean.csv representing clear dataset with noise reduction. This work is only for Google Colab.
-Dataset
+
+**Dataset overview**
 
 Raw Data: planets.csv
 
 Processed Data: planets_clean.csv (after noise reduction and preprocessing)
 
-Features Used
+**Features Used**
 
-Planetary Features: Radius, density, eccentricity, equilibrium temperature, orbital period
+- Planetary Features: Radius, density, eccentricity, equilibrium temperature, orbital period
+- Stellar Features: Effective temperature, mass, radius, surface gravity, density
+- Discovery Information: Year, method, distance from Earth
 
-Stellar Features: Effective temperature, mass, radius, surface gravity, density
+**Preprocessing steps**
 
-Discovery Information: Year, method, distance from Earth
+1) Renamed column titles for clarity
+2) Visualized key characteristics with scatter plots, bar charts, and pair plots
+3) Identified and removed missing values and duplicates
+4) Encoded categorical variables using Label Encoding & Factorization
+5) Balanced the dataset using SMOTE (Synthetic Minority Over-sampling Technique)
 
-Preprocessing Steps
-
-Renamed column titles for clarity
-
-Visualized key characteristics with scatter plots, bar charts, and pair plots
-
-Identified and removed missing values and duplicates
-
-Encoded categorical variables using Label Encoding & Factorization
-
-Balanced the dataset using SMOTE (Synthetic Minority Over-sampling Technique)
-
-Data Visualization
+**Data visualization**
 
 Scatterplots: Planet radii vs. planet names
-
 Bar Charts: Discovery methods distribution, recent discoveries (2010-2024)
-
 Pair Plots: Relationship between planetary and stellar features
-
 KDE Plots: Distribution of discovery methods
 
-Machine Learning Models
+**Machine learning models**
 
 Each model is trained and evaluated on the preprocessed dataset:
 
-Naïve Bayes: Probabilistic classifier assuming feature independence
+1. Naïve Bayes: Probabilistic classifier assuming feature independence
+2. Decision Trees: Tree-based classification model
+3. Random Forest: Ensemble learning with multiple decision trees
 
-Decision Trees: Tree-based classification model
-
-Random Forest: Ensemble learning with multiple decision trees
-
-Usage
-
-Google Colab
+**Usage**
 
 This project is designed for execution in Google Colab.
 
-Run the Notebook
+- Run the Notebook
+- Upload planets.csv to Google Colab.
+- Run the preprocessing steps.
+- Download the processed dataset (planets_clean.csv) and upload it to Colab.
+- Train and evaluate models.
+  
+**Dependencies**
 
-Upload planets.csv to Google Colab.
-
-Run the preprocessing steps.
-
-Train and evaluate models.
-
-Download the processed dataset (planets_clean.csv).
+- Python 3.x
+- Pandas, NumPy
+- Scikit-learn
+- Seaborn, Matplotlib
+- Imbalanced-learn (for SMOTE)
